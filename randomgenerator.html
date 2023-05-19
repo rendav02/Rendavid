@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compliment Website</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    button{
+      background-color: pink;
+      color: rgb(250, 253, 255);
+      font-weight: weight;
+    }
+  </style>
+</head>
+<body>
+  <h1>HELLO</h1>
+  <p> small letter yung paglagay ng name, WAG NA MAKULITTT, AYOKO MANAKIT PLSS LANGG. CLICK MO YUNG ENTER NA BUTTON NA PINK, OKKK? YUNG PINK NA ENTER!!.</p>
+  <form>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="button" onclick="displayCompliment()">Enter</button>
+  </form>
+  <p id="compliment"></p>
+  <button onclick="redirectToVideo()">click mo nalang to</button>
+
+  <script>
+    function displayCompliment() {
+      var name = document.getElementById("name").value;
+      var compliments = [
+        "You are beautiful, " + name + "!",
+        "You have a radiant smile, " + name + "!",
+        "Your positive energy is contagious, " + name + "!",
+        "You are smart and capable, " + name + "!",
+        "Your kindness is inspiring, " + name + "!",
+        "You have a great sense of style, " + name + "!",
+        "You are doing an amazing job, " + name + "!",
+        "You have a fantastic personality, " + name + "!",
+        "Your creativity knows no bounds, " + name + "!",
+        "You light up the room, " + name + "!"
+      ];
+      
+      var compliment;
+
+      if (name.toLowerCase() === "cheska") {
+        var cheskaCompliments = [
+          "Ang sungit mo, Cheska. Di tayo bati!!!",
+          "Di tayo bati, bahala ka diyan",
+          "Mama mo hehe"
+        ];
+        compliment = cheskaCompliments[Math.floor(Math.random() * cheskaCompliments.length)];
+      } else if (name.toLowerCase() === "ren") {
+        var renCompliments = [
+          "Ang pogi mo, Ren!",
+          "Napakabait mo, Ren",
+          "Si Ren na ang pinakamabait sa buong mundo"
+        ];
+        compliment = renCompliments[Math.floor(Math.random() * renCompliments.length)];
+      } else {
+        compliment = compliments[Math.floor(Math.random() * compliments.length)];
+      }
+
+      document.getElementById("compliment").textContent = compliment;
+    }
+    
+    function redirectToVideo() {
+      window.location.href = "https://youtu.be/TeQ_TTyLGMs";
+    }
+  </script>
+</body>
+</html>
